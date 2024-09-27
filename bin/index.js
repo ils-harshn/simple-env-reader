@@ -16,8 +16,9 @@ async function loadSecrets() {
       name: process.env.SECRET_VERSION_NAME,
     });
 
-    const payload = version.payload.data.toString();
-    process.env[secret.envKey] = payload;
+    const payload = version.payload.data.toString("utf8");
+    let config = JSON.parse(payload);
+    process.env.APP_NAME = config.APP_NAME;
     // }
 
     console.log("Secrets loaded into process.env");
