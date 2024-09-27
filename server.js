@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const http = require("http");
-const loadSecrets = require("./bin/loadSecrets");
+const loadSecrets = require("./bin");
 
 const app = express();
 
